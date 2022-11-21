@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="bg-light p-5">
+    <h1 class="text-center">Rails Longest Word</h1>
+    <h4 class="text-center mb-5">Make the longest word you can, using these letters</h4>
+
+    <div class="d-flex justify-content-center align-middle mb-5">
+      <% @grid.each do |letter| %>
+        <div class="letter-box text-center"><p><%= letter.capitalize %></p></div>
+      <% end %>
+    </div>
+
+    <form action="/score" data-turbo="false">
+      <div class="d-flex justify-content-between align-middle mb-5">
+        <input class="form-control" type="text" name="attempt">
+        <input name="grid" type="hidden" value=<% @grid %> >
+        <input class="btn btn-dark" type="submit" value="Verify!">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      </div>
+    </form>
+  </div>
+<div>

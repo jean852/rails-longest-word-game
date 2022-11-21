@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="bg-light p-5">
+    <h1 class="text-center">Rails Longest Word</h1>
+    <h4 class="text-center mb-5">Here is your Score</h4>
+
+    <div class="d-flex justify-content-center align-middle mb-5">
+      <% @grid.each do |letter| %>
+        <div class="letter-box text-center"><p><%= letter.capitalize %></p></div>
+      <% end %>
+    </div>
+
+    <div class="d-flex justify-content-between align-middle mb-5">
+      <p>Your word was: <% @attempt %></p>
+    </div>
+    <%= link_to "Play again", new_path %>
+  </div>
+
+<div>
